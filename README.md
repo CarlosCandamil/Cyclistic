@@ -1,8 +1,6 @@
-# Cyclistic
-Google Data Analytics course/Capstone Project 
+# Cyclistic /Capstone Project 
 
-##Case
-This is a Case Study (Fictional) for the Google data analytics certificate, where I analyzed  the dataset from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) as if it were from a fictional company "Cyclistic" wanting to convert casual riders into members.  
+This is a Case Study (Fictional) for the Google data analytics certificate, dataset is from the Chicago city bike program   
 
 ## Business Task 
 - Design marketing strategies aimed at converting casual riders into annual members.
@@ -18,7 +16,7 @@ Dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s
 - Created dataset Cyclistic on *BibQuery* and uploaded all csv files as tables.
 
 ### Queries
-- Created query to get **Average** and **standard deviation** on trips distance and duration aggregated by User type (mamber or Casual) and bike type (electric or docked/classic).   
+1. (Query 1) to get **Average** and **Standard Deviation** on trips distance and duration aggregated by User type (mamber or Casual) and bike type (electric or docked/classic). 
 ```sql
 SELECT 
 member_casual,
@@ -39,4 +37,25 @@ group by  type_of_bike, member_casual
 order by member_casual;
 ```
 Used *Tableau* to visualize the data **Dashboard 1**
-![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png)
+[Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png)
+
+2. (Query 2) created to get trip duration ranges 
+
+```sql
+ WITH trip_time_table AS
+        (SELECT
+        member_casual,
+        TIMESTAMP_DIFF(ended_at, started_at, MINUTE) as trip_time 
+        FROM 
+        `Cyclistic.2021_*`)
+SELECT 
+member_casual,
+        sum(case when trip_time <= 40 then 1 else 0 end) as under_40min,
+       sum(case when trip_time > 40 and trip_time <= 120 then 1 else 0 end) as f40min_2H,
+       sum(case when trip_time > 120 and trip_time <= 240 then 1 else 0 end) as f2H_4H,
+       sum(case when trip_time > 240 and trip_time <= 9000000 then 1 else 0 end) as over_4H
+
+FROM trip_time_table
+group by member_casual
+```
+Visualization on *Tableau*[](https://github.com/CarlosCandamil/Cyclistic/blob/main/Sheet%204.png)
