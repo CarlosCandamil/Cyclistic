@@ -1,7 +1,42 @@
 # Cyclistic
 Google Data Analytics course/Capstone Project 
 
+##Case
+This is a Case Study (Fictional) for the Google data analytics certificate, where I analyzed  the dataset from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) as if it were from a fictional company "Cyclistic" wanting to convert casual riders into members.  
+
+## Business Task 
+- Design marketing strategies aimed at converting casual riders into annual members.
+- Understand how annual members and casual riders differ.
+- Why casual riders would buy a membership.
+
+## Data 
+Dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) 
+
+## Data Cleaning and Manipulation
+- Downloaded 12 .csv files "202101-divvy-tripdata.zip" to "202112-divvy-tripdata.zip"
+- Split files "202106-divvy-tripdata.zip" to "202110-divvy-tripdata.zip" into two .csv files each to be able to upload to *BigQuery* (csv size limit 100MB)
+- Created dataset Cyclistic on *BibQuery* and uploaded all csv files as tables.
+
+### Queries
+- Created query to get **Average** and **standard deviation** on trips distance and duration aggregated by User type (mamber or Casual) and bike type (electric or docked/classic).   
 ```sql
-SELECT
+SELECT 
+member_casual,
+CASE WHEN rideable_type IN ("classic_bike", "docked_bike") then "classic_dock" ELSE "electric" end as type_of_bike,
+
+COUNT(ride_id) as number_rides_pertype,
+
+ROUND(AVG(TIMESTAMP_DIFF(ended_at, started_at, MINUTE)),2) as avg_trip_dur_min,
+ROUND(STDDEV(TIMESTAMP_DIFF(ended_at, started_at, MINUTE)),2) AS std_trip_dur,
+
+ROUND(AVG(ST_DISTANCE( ST_GEOGPOINT(start_lng, start_lat),ST_GEOGPOINT(end_lng, end_lat))/1000),2) as avg_trip_distance_km,
+ROUND(STDDEV(ST_DISTANCE( ST_GEOGPOINT(start_lng, start_lat),ST_GEOGPOINT(end_lng, end_lat))/1000),2) AS std_distance
+
+FROM 
+`Cyclistic.2021_*`
+
+group by  type_of_bike, member_casual
+order by member_casual;
 ```
-<div class='tableauPlaceholder' id='viz1643566061438' style='position: relative'><noscript><a href='#'><img alt='Dashboard 2 ' src='Q5&#47;Q5H2BD6NC&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='path' value='shared&#47;Q5H2BD6NC' /> <param name='toolbar' value='yes' /><param name='static_image' value='Q5&#47;Q5H2BD6NC&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1643566061438');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1000px';vizElement.style.height='827px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+Used *Tableau* to visualize the data **Dashboard 1**
+![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png)
