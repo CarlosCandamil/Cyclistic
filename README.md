@@ -37,7 +37,7 @@ group by  type_of_bike, member_casual
 order by member_casual;
 ```
 
-2. [(Query 2)](https://github.com/CarlosCandamil/Cyclistic/blob/main/Trip_ranges.sql) Returns trip duration ranges. Visualization on *Tableau*[](https://github.com/CarlosCandamil/Cyclistic/blob/main/Sheet%204.png)
+2. [(Query 2)](https://github.com/CarlosCandamil/Cyclistic/blob/main/Trip_ranges.sql) Returns trip duration ranges. Visualization on *Tableau*[](https://github.com/CarlosCandamil/Cyclistic/blob/main/NotSheet%204.png)
 
 ```sql
  WITH trip_time_table AS
@@ -107,6 +107,6 @@ The difference is larger when comparing electric bikes with classic bikes.
 **Dashboard 1** 
 ![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png) 
 **Amount of trips per time range**
-![](https://github.com/CarlosCandamil/Cyclistic/blob/main/Sheet%204.png) 
+![](https://github.com/CarlosCandamil/Cyclistic/blob/main/NotSheet%204.png) 
 
 We can conclude there is a correlation between casual riders and slow speed, which is larger when using classic bikes. 
