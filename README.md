@@ -1,14 +1,14 @@
 # Cyclistic /Capstone Project 
 
-## Data 
+## Data Source
 Case Study for the Google data analytics certificate, The dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) 
 
-## Business Task 
+## Business Case 
 - Design marketing strategies aimed at converting casual riders into annual members.
 - Understand how annual members and casual riders differ.
 - Why would casual riders buy a membership?
 
-## Data Cleaning and Manipulation
+## EDA, Data Cleaning, and Feature Engineering. 
 - Downloaded 12 .csv files "202101-divvy-tripdata.zip" to "202112-divvy-tripdata.zip" one for each month of 2021 
 - Split files "202106-divvy-tripdata.zip" to "202110-divvy-tripdata.zip" into two .csv files each, to enable upload to *BigQuery* (csv size limit 100MB)
 - Created dataset Cyclistic on *BibQuery* and uploaded all CSV files as tables.
