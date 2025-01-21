@@ -1,19 +1,19 @@
 # Cyclistic /Capstone Project 
 
 ## Data 
-Case Study (Fictional) for the Google data analytics certificate, dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) 
+Case Study for the Google data analytics certificate, The dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) 
 
 ## Business Task 
 - Design marketing strategies aimed at converting casual riders into annual members.
 - Understand how annual members and casual riders differ.
-- Why casual riders would buy a membership.
+- Why would casual riders buy a membership?
 
 ## Data Cleaning and Manipulation
 - Downloaded 12 .csv files "202101-divvy-tripdata.zip" to "202112-divvy-tripdata.zip" one for each month of 2021 
 - Split files "202106-divvy-tripdata.zip" to "202110-divvy-tripdata.zip" into two .csv files each, to enable upload to *BigQuery* (csv size limit 100MB)
-- Created dataset Cyclistic on *BibQuery* and uploaded all csv files as tables.
+- Created dataset Cyclistic on *BibQuery* and uploaded all CSV files as tables.
 
-If the case was real there would be a huge potential to better clean and organize the data to get more reliable results,  for instance, the dataset had a lot of null values on the location data, which would be key to better understanding what is going on.
+There is a huge potential to better clean and organize the data to get more reliable results,  for instance, the dataset had a lot of null values on the location data, which would be key to better understanding what is going on.
 I created a SQL code that can populate these null values based on the latitude and longitude coordinates of bike rides, however, the dataset is too big and the code is too heavy to run with my current BigQuery account capabilities. [null replacement by location](https://github.com/CarlosCandamil/Cyclistic/blob/main/Loco.sql)
 
 ### Queries
@@ -120,7 +120,7 @@ This shows there is a correlation between casual riders and slow speed, which is
 **Dashboard 2** 
 
 [Query 4](Top_locations_lat_lng.sql) 
-Plotted on a Chicago map shows a heatmap that highlights the areas of the city where riders are more likely to be members. Can be used to target marketing or surveys  [Query 3](https://github.com/CarlosCandamil/Cyclistic/blob/main/Top_locations.sql) Can be used to identify specific top locations where users are majority casual riders. 
+Plotted on a Chicago map is a heatmap that highlights the areas of the city where riders are more likely to be members. Can be used to target marketing or surveys  [Query 3](https://github.com/CarlosCandamil/Cyclistic/blob/main/Top_locations.sql) Can be used to identify specific top locations where users are majority casual riders. 
  
 **Dashboard 2** ![Chicago Map](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%202.png)
 
@@ -133,5 +133,5 @@ The analysis can also improve by taking more time and running a few more specifi
 
 ### Recomendations. 
 Based on the analysis I would recommend exploring deeper the correlation between casual riders and long rides as well as the role and availability of electric bikes, this can be done with surveys (asking for bike type preference) and getting system input information on the availability of electric bikes on certain stations.  
-The map and the top casual stations can be used to identify locations for the surveys and gathering of more information as well as the target for marketing campaigns. 
+The map and the top casual stations can be used to identify locations for the surveys and gather more information as well as the target for marketing campaigns. 
 
