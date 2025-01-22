@@ -108,11 +108,11 @@ Analysis was done using SQL (BigQuery) and Tableau, queries were used to create 
 The difference is larger when comparing electric bikes with classic bikes. 
 
 **Dashboard 1** 
-![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png) 
+![Metrics](Cyclistic/Dashboard1.png) 
 
 **Amount of trips per time range**
 
-![](https://github.com/CarlosCandamil/Cyclistic/blob/main/NotSheet%204.png) 
+![](Cyclistic/Dashboard2.png) 
 
 This shows there is a correlation between casual riders and slow speed, which is larger when using classic bikes. 
 
