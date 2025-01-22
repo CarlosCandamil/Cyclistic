@@ -108,11 +108,11 @@ Analysis was done using SQL (BigQuery) and Tableau, queries were used to create 
 The difference is larger when comparing electric bikes with classic bikes. 
 
 **Dashboard 1** 
-![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png) 
+![Metrics](https://raw.githubusercontent.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png) 
 
 **Amount of trips per time range**
 
-![](https://github.com/CarlosCandamil/Cyclistic/blob/main/NotSheet%204.png) 
+![](https://raw.githubusercontent.com/CarlosCandamil/Cyclistic/blob/main/NotSheet%204.png) 
 
 This shows there is a correlation between casual riders and slow speed, which is larger when using classic bikes. 
 
@@ -122,7 +122,7 @@ This shows there is a correlation between casual riders and slow speed, which is
 [Query 4](Top_locations_lat_lng.sql) 
 Plotted on a Chicago map is a heatmap that highlights the areas of the city where riders are more likely to be members. Can be used to target marketing or surveys  [Query 3](https://github.com/CarlosCandamil/Cyclistic/blob/main/Top_locations.sql) Can be used to identify specific top locations where users are majority casual riders. 
  
-**Dashboard 2** ![Chicago Map](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%202.png)
+**Dashboard 2** ![Chicago Map](https://raw.githubusercontent.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%202.png)
 
 A big part of the analysis could be supported by having two more sets of data that are not present in the dataset; 
 
