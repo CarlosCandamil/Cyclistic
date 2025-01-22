@@ -18,7 +18,7 @@ I created a SQL code that can populate these null values based on the latitude a
 
 ### Queries
 1.[(Query 1)](https://github.com/CarlosCandamil/Cyclistic/blob/main/Metrics.sql) returns a table with the average **distance traveled** and **Trip duration** aggregated by **User type** (mamber or Casual) and **bike type** (electric or docked/classic). *Tableau* data visualization  **Dashboard 1**
-[Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png)
+[Metrics](Cyclistic/Dashboard1.png)
 
 ```sql
 SELECT 
