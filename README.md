@@ -108,7 +108,7 @@ Analysis was done using SQL (BigQuery) and Tableau, queries were used to create 
 The difference is larger when comparing electric bikes with classic bikes. 
 
 **Dashboard 1** 
-![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard%201.png) 
+![Metrics](https://github.com/CarlosCandamil/Cyclistic/blob/main/Dashboard1.png) 
 
 **Amount of trips per time range**
 
