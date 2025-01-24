@@ -1,4 +1,5 @@
-# Cyclistic /Capstone Project 
+# Cyclistic 
+Capstone Project 
 
 ## Data 
 Case Study for the Google data analytics certificate, The dataset is from the Chicago city bike program [Dataset](https://divvy-tripdata.s3.amazonaws.com/index.html) 
