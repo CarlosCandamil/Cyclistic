@@ -1,3 +1,7 @@
+---
+layout: default
+title: Cyclistic
+---
 # Cyclistic 
 Capstone Project 
 
